@@ -1,5 +1,5 @@
 <?php
-
+<n>
 /**
  * Provide a admin area view for the plugin
  *
@@ -12,5 +12,4 @@
  * @subpackage <pascalSnakeCase>/admin/partials
  */
 ?>
-
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<n>

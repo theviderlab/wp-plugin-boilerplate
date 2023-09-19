@@ -24,41 +24,36 @@ for %%i in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do (
     set upperSnakeCase=!upperSnakeCase:%%i=%%i!
 )
 
-echo %kebabCase%
-echo %snakeCase%
-echo %pascalCase%
-echo %upperSnakeCase%
-echo %lowerSnakeCase%
-pause
-
 :: Rename files recursively
 for /R %%f in (*plugin-name*) do (
     set newName=%%~nf
     set newName=!newName:plugin-name=%kebabCase%!
     ren "%%f" "!newName!%%~xf"
 )
-pause
 
 :: Replace content in files recursively
 for /R %%f in (*.php) do (
     > "%%f.tmp" (
         for /f "usebackq delims=" %%l in ("%%f") do (
             set "line=%%l"
-            set "line=!line:<kebabCase>=%kebabCase%!"
-            set "line=!line:<lowerSnakeCase>=%lowerSnakeCase%!"
-            set "line=!line:<pascalSnakeCase>=%pascalSnakeCase%!"
-            set "line=!line:<upperSnakeCase>=%upperSnakeCase%!"
-            set "line=!line:<pluginName>=%pluginName%!"
-            set "line=!line:<pluginURI>=%pluginURI%!"
-            set "line=!line:<pluginDescription>=%pluginDescription%!"
-            set "line=!line:<pluginAuthor>=%pluginAuthor%!"
-            set "line=!line:<pluginAuthorURI>=%pluginAuthorURI%!"
-            echo(!line!
+            if "!line!"=="<n>" (
+                echo(
+            ) else (
+                set "line=!line:<kebabCase>=%kebabCase%!"
+                set "line=!line:<lowerSnakeCase>=%lowerSnakeCase%!"
+                set "line=!line:<pascalSnakeCase>=%pascalSnakeCase%!"
+                set "line=!line:<upperSnakeCase>=%upperSnakeCase%!"
+                set "line=!line:<pluginName>=%pluginName%!"
+                set "line=!line:<pluginURI>=%pluginURI%!"
+                set "line=!line:<pluginDescription>=%pluginDescription%!"
+                set "line=!line:<pluginAuthor>=%pluginAuthor%!"
+                set "line=!line:<pluginAuthorURI>=%pluginAuthorURI%!"
+                echo(!line!
+            )
         )
     )
     move /y "%%f.tmp" "%%f" >nul
 )
-pause
 
 echo All done!
 pause

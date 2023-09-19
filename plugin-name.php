@@ -1,5 +1,5 @@
 <?php
-
+<n>
 /**
  * The plugin bootstrap file
  *
@@ -24,19 +24,19 @@
  * Text Domain:       <kebabCase>
  * Domain Path:       /languages
  */
-
+<n>
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
+if ( defined( 'WPINC' ) === false ) {
 	die;
 }
-
+<n>
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
 define( '<upperSnakeCase>_VERSION', '1.0.0' );
-
+<n>
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-<kebabCase>-activator.php
@@ -45,7 +45,7 @@ function activate_<lowerSnakeCase>() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-<kebabCase>-activator.php';
 	<pascalSnakeCase>_Activator::activate();
 }
-
+<n>
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-<kebabCase>-deactivator.php
@@ -54,16 +54,16 @@ function deactivate_<lowerSnakeCase>() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-<kebabCase>-deactivator.php';
 	<pascalSnakeCase>_Deactivator::deactivate();
 }
-
+<n>
 register_activation_hook( __FILE__, 'activate_<lowerSnakeCase>' );
 register_deactivation_hook( __FILE__, 'deactivate_<lowerSnakeCase>' );
-
+<n>
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-<kebabCase>.php';
-
+<n>
 /**
  * Begins execution of the plugin.
  *

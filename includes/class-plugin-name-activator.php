@@ -1,5 +1,5 @@
 <?php
-
+<n>
 /**
  * Fired during plugin activation
  *
@@ -9,7 +9,7 @@
  * @package    <pascalSnakeCase>
  * @subpackage <pascalSnakeCase>/includes
  */
-
+<n>
 /**
  * Fired during plugin activation.
  *
@@ -21,7 +21,7 @@
  * @author     <pluginAuthor>
  */
 class <pascalSnakeCase>_Activator {
-
+<n>
 	/**
 	 * Short Description. (use period)
 	 *
@@ -30,7 +30,7 @@ class <pascalSnakeCase>_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-
+<n>
 	}
-
+<n>
 }

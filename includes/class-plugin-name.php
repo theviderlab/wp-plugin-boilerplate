@@ -1,5 +1,5 @@
 <?php
-
+<n>
 /**
  * The file that defines the core plugin class
  *
@@ -12,7 +12,7 @@
  * @package    <pascalSnakeCase>
  * @subpackage <pascalSnakeCase>/includes
  */
-
+<n>
 /**
  * The core plugin class.
  *
@@ -28,7 +28,7 @@
  * @author     <pluginAuthor>
  */
 class <pascalSnakeCase> {
-
+<n>
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
@@ -38,7 +38,7 @@ class <pascalSnakeCase> {
 	 * @var      <pascalSnakeCase>_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
-
+<n>
 	/**
 	 * The unique identifier of this plugin.
 	 *
@@ -47,7 +47,7 @@ class <pascalSnakeCase> {
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
 	protected $plugin_name;
-
+<n>
 	/**
 	 * The current version of the plugin.
 	 *
@@ -56,7 +56,7 @@ class <pascalSnakeCase> {
 	 * @var      string    $version    The current version of the plugin.
 	 */
 	protected $version;
-
+<n>
 	/**
 	 * Define the core functionality of the plugin.
 	 *
@@ -73,14 +73,14 @@ class <pascalSnakeCase> {
 			$this->version = '1.0.0';
 		}
 		$this->plugin_name = '<kebabCase>';
-
+<n>
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
+<n>
 	}
-
+<n>
 	/**
 	 * Load the required dependencies for this plugin.
 	 *
@@ -98,34 +98,34 @@ class <pascalSnakeCase> {
 	 * @access   private
 	 */
 	private function load_dependencies() {
-
+<n>
 		/**
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-<kebabCase>-loader.php';
-
+<n>
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-<kebabCase>-i18n.php';
-
+<n>
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-<kebabCase>-admin.php';
-
+<n>
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-<kebabCase>-public.php';
-
+<n>
 		$this->loader = new <pascalSnakeCase>_Loader();
-
+<n>
 	}
-
+<n>
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
@@ -136,13 +136,13 @@ class <pascalSnakeCase> {
 	 * @access   private
 	 */
 	private function set_locale() {
-
+<n>
 		$plugin_i18n = new <pascalSnakeCase>_i18n();
-
+<n>
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
+<n>
 	}
-
+<n>
 	/**
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
@@ -151,14 +151,14 @@ class <pascalSnakeCase> {
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
-
+<n>
 		$plugin_admin = new <pascalSnakeCase>_Admin( $this->get_plugin_name(), $this->get_version() );
-
+<n>
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
+<n>
 	}
-
+<n>
 	/**
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
@@ -167,14 +167,14 @@ class <pascalSnakeCase> {
 	 * @access   private
 	 */
 	private function define_public_hooks() {
-
+<n>
 		$plugin_public = new <pascalSnakeCase>_Public( $this->get_plugin_name(), $this->get_version() );
-
+<n>
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
+<n>
 	}
-
+<n>
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
@@ -183,7 +183,7 @@ class <pascalSnakeCase> {
 	public function run() {
 		$this->loader->run();
 	}
-
+<n>
 	/**
 	 * The name of the plugin used to uniquely identify it within the context of
 	 * WordPress and to define internationalization functionality.
@@ -194,7 +194,7 @@ class <pascalSnakeCase> {
 	public function get_plugin_name() {
 		return $this->plugin_name;
 	}
-
+<n>
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
@@ -204,7 +204,7 @@ class <pascalSnakeCase> {
 	public function get_loader() {
 		return $this->loader;
 	}
-
+<n>
 	/**
 	 * Retrieve the version number of the plugin.
 	 *
@@ -214,5 +214,5 @@ class <pascalSnakeCase> {
 	public function get_version() {
 		return $this->version;
 	}
-
+<n>
 }
